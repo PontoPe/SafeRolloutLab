@@ -41,6 +41,7 @@ No daemonized automatic observer, dashboard, AWS, Kubernetes, public ports, real
 
 ## Demo and portfolio
 
+- [Short asciinema demo (32 s cast + GIF)](docs/demo/README.md#short-demo-asciinema-32-s): `scripts/demo-recording.sh` runs the tests, the full HTTP experiment and the rollback outcomes, unedited.
 - [Real terminal recording and replay instructions](docs/demo/README.md): tests, full HTTP experiment and measured failure outcomes. Re-record with `python3 scripts/record-demo.py`; no generated terminal output is substituted for command output.
 - [Resume bullets and evidence map](docs/resume.md), [publication handoff](docs/publication.md).
 - CI runs tests (including the bounded HTTP smoke experiment), compilation, directory and Git-history secret scanning. Actions are pinned by commit SHA, with read-only repository permission and no stored checkout credentials. It does not deploy or publish packages.
