@@ -1,0 +1,30 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+_____ test_failed_final_stage_rollback_halts_across_restart_until_recovery _____
+
+tmp_path = PosixPath('/home/pontope/.hermes/cache/scratch/pytest-of-pontope/pytest-28/test_failed_final_stage_rollba0')
+
+    def test_failed_final_stage_rollback_halts_across_restart_until_recovery(tmp_path):
+        from saferollout.controller import Controller
+        store = Store(tmp_path / 'route.json')
+        store.initialize(RULES['stable'])
+        c = Controller(store, minimum=10)
+        active = c.begin(RULES['good'])
+        active = store.update(active['epoch'], stage=2, percent=100)
+        passing = [{**r, 'epoch': active['epoch']} for r in
+                   rows(version(RULES['stable']), 10) + rows(version(RULES['good']), 10)]
+        with open(str(store.path) + '.lock', 'a') as lock:
+            fcntl.flock(lock, fcntl.LOCK_EX)
+            started = time.monotonic()
+            assert c.rollback('operator_requested')['decision'] == 'ROLLBACK_FAILED'
+            assert time.monotonic() - started < 1.5
+        c = Controller(Store(store.path), minimum=10)
+>       assert c.observe(passing)['decision'] == 'HALTED'
+E       AssertionError: assert 'PASS' == 'HALTED'
+E         - HALTED
+E         + PASS
+
+tests/test_controller.py:64: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_controller.py::test_failed_final_stage_rollback_halts_across_restart_until_recovery
+1 failed in 0.63s

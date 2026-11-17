@@ -1,0 +1,12 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+____________ test_functional_equivalence_is_not_performance_safety _____________
+
+    def test_functional_equivalence_is_not_performance_safety():
+>       from saferollout.rules import RULES, functional_gate, performance_gate, validate
+E       ModuleNotFoundError: No module named 'saferollout.rules'
+
+tests/test_rules.py:2: ModuleNotFoundError
+=========================== short test summary info ============================
+FAILED tests/test_rules.py::test_functional_equivalence_is_not_performance_safety
+1 failed in 0.01s

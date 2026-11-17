@@ -1,0 +1,19 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+_____ test_canary_only_defect_aborts_and_confirmed_rollback_serves_stable ______
+
+tmp_path = PosixPath('/home/pontope/.hermes/cache/scratch/pytest-of-pontope/pytest-10/test_canary_only_defect_aborts0')
+
+    def test_canary_only_defect_aborts_and_confirmed_rollback_serves_stable(tmp_path):
+        from saferollout.api import create_server
+        from saferollout.controller import Controller
+        store = Store(tmp_path / 'route.json')
+        store.initialize(RULES['stable'])
+        c = Controller(store, minimum=10)
+>       route = c.begin(RULES['expensive'], profile='small')
+E       TypeError: Controller.begin() got an unexpected keyword argument 'profile'
+
+tests/test_canary.py:15: TypeError
+=========================== short test summary info ============================
+FAILED tests/test_canary.py::test_canary_only_defect_aborts_and_confirmed_rollback_serves_stable
+1 failed in 0.02s

@@ -1,0 +1,63 @@
+FFF                                                                      [100%]
+=================================== FAILURES ===================================
+____________ test_noop_rule_cannot_create_fake_two_version_evidence ____________
+
+tmp_path = PosixPath('/home/pontope/.hermes/cache/scratch/pytest-of-pontope/pytest-18/test_noop_rule_cannot_create_f0')
+
+    def test_noop_rule_cannot_create_fake_two_version_evidence(tmp_path):
+        from saferollout.controller import Controller
+        store = Store(tmp_path / 'route.json')
+        store.initialize(RULES['stable'])
+>       with pytest.raises(ValueError, match='same version'):
+E       Failed: DID NOT RAISE <class 'ValueError'>
+
+tests/test_safety.py:11: Failed
+_______________ test_load_generator_cannot_target_external_hosts _______________
+
+tmp_path = PosixPath('/home/pontope/.hermes/cache/scratch/pytest-of-pontope/pytest-18/test_load_generator_cannot_tar0')
+
+    def test_load_generator_cannot_target_external_hosts(tmp_path):
+        from saferollout.loadgen import run
+        with pytest.raises(ValueError, match='loopback'):
+>           run('https://example.com', tmp_path / 'missing.json', tmp_path / 'client.jsonl')
+
+tests/test_safety.py:18: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/saferollout/loadgen.py:30: in run
+    route = Store(state).read()
+src/saferollout/router.py:29: in read
+    return json.loads(self.path.read_text())
+/usr/lib/python3.11/pathlib.py:1059: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/home/pontope/.hermes/cache/scratch/pytest-of-pontope/pytest-18/test_load_generator_cannot_tar0/missing.json')
+mode = 'r', buffering = -1, encoding = 'locale', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+E       FileNotFoundError: [Errno 2] No such file or directory: '/home/pontope/.hermes/cache/scratch/pytest-of-pontope/pytest-18/test_load_generator_cannot_tar0/missing.json'
+
+/usr/lib/python3.11/pathlib.py:1045: FileNotFoundError
+______________ test_journal_rejects_oversized_input_before_append ______________
+
+tmp_path = PosixPath('/home/pontope/.hermes/cache/scratch/pytest-of-pontope/pytest-18/test_journal_rejects_oversized0')
+
+    def test_journal_rejects_oversized_input_before_append(tmp_path):
+        journal = Journal(tmp_path / 'test.jsonl')
+>       with pytest.raises(OSError):
+E       Failed: DID NOT RAISE <class 'OSError'>
+
+tests/test_safety.py:23: Failed
+=========================== short test summary info ============================
+FAILED tests/test_safety.py::test_noop_rule_cannot_create_fake_two_version_evidence
+FAILED tests/test_safety.py::test_load_generator_cannot_target_external_hosts
+FAILED tests/test_safety.py::test_journal_rejects_oversized_input_before_append
+3 failed in 0.17s

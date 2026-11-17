@@ -1,0 +1,2 @@
+# Preserve historical terminal output byte-for-byte, including pytest whitespace.
+docs/evidence/*.txt -whitespace

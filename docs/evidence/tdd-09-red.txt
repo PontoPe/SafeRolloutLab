@@ -1,0 +1,10 @@
+============================= test session starts ==============================
+platform linux -- Python 3.11.2, pytest-7.2.1, pluggy-1.0.0+repack -- /usr/bin/python3
+cachedir: .pytest_cache
+rootdir: /home/pontope/Coding/saferollout-lab, configfile: pyproject.toml
+plugins: anyio-4.14.2
+collecting ... collected 2 items
+
+tests/test_hardening.py::test_malformed_telemetry_is_inconclusive_not_a_crash FAILED [ 50%]
+tests/test_hardening.py::test_control_lock_has_deadline_and_records_failed_rollback 
+exit=124 (124 means missing control-lock deadline)

@@ -1,0 +1,33 @@
+
+$ /usr/bin/python3 -m pytest -q
+[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m                                                                                          [100%][0m
+[32m[32m[1m23 passed[0m[32m in 9.98s[0m[0m
+
+[exit 0]
+
+$ ./scripts/demo.sh docs/demo/publication/evidence 100
+{"output": "/home/pontope/Coding/saferollout-lab/docs/demo/publication/evidence", "requests": 1510, "good": "PROMOTED", "cleanup": {"api_reaped": true, "api_pids": [4026498, 4030130]}}
+
+[exit 0]
+
+$ /usr/bin/python3 scripts/record-demo.py --report docs/demo/publication/evidence/summary.json
+Measured outcomes (not simulated output):
+  10% stage: PASS
+  50% stage: PASS
+  100% stage: PASS
+  false_positive: REJECTED
+  expensive_preflight: REJECTED
+  missing_telemetry: INCONCLUSIVE
+  insufficient_sample: INCONCLUSIVE
+  bad_canary: REJECT
+  api_down_rollback: ROLLED_BACK
+  rollback_failure: ROLLBACK_FAILED
+  operator_recovery: ROLLED_BACK
+  bad HTTP: 503
+  post-rollback HTTP: 200
+  observations: 1510
+  worker status counts: {'ok': 1509, 'timeout': 1}
+  cleanup: {'api_pids': [4026498, 4030130], 'api_reaped': True}
+  all runtime source hashes match this checkout
+
+[exit 0]

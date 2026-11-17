@@ -1,0 +1,24 @@
+FF                                                                       [100%]
+=================================== FAILURES ===================================
+______________ test_controller_recovers_stages_and_promotes_once _______________
+
+tmp_path = PosixPath('/home/pontope/.hermes/cache/scratch/pytest-of-pontope/pytest-6/test_controller_recovers_stage0')
+
+    def test_controller_recovers_stages_and_promotes_once(tmp_path):
+>       from saferollout.controller import Controller
+E       ModuleNotFoundError: No module named 'saferollout.controller'
+
+tests/test_controller.py:7: ModuleNotFoundError
+__________ test_controller_rollback_independent_and_failure_is_honest __________
+
+tmp_path = PosixPath('/home/pontope/.hermes/cache/scratch/pytest-of-pontope/pytest-6/test_controller_rollback_indep0')
+
+    def test_controller_rollback_independent_and_failure_is_honest(tmp_path):
+>       from saferollout.controller import Controller
+E       ModuleNotFoundError: No module named 'saferollout.controller'
+
+tests/test_controller.py:31: ModuleNotFoundError
+=========================== short test summary info ============================
+FAILED tests/test_controller.py::test_controller_recovers_stages_and_promotes_once
+FAILED tests/test_controller.py::test_controller_rollback_independent_and_failure_is_honest
+2 failed in 0.01s

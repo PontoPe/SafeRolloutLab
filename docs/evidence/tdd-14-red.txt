@@ -1,0 +1,19 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+____________ test_candidate_has_no_access_to_stable_worker_capacity ____________
+
+tmp_path = PosixPath('/home/pontope/.hermes/cache/scratch/pytest-of-pontope/pytest-21/test_candidate_has_no_access_t0')
+
+    def test_candidate_has_no_access_to_stable_worker_capacity(tmp_path):
+        from saferollout.api import create_server
+        store = Store(tmp_path / 'route.json')
+        route = store.initialize(RULES['stable'])
+        route = store.update(route['epoch'], candidate=RULES['expensive'], percent=10)
+        server = create_server(store.path, tmp_path / 'metrics.jsonl')
+>       assert server.stable_worker is not server.candidate_worker
+E       AttributeError: 'BoundedServer' object has no attribute 'stable_worker'
+
+tests/test_lane_isolation.py:14: AttributeError
+=========================== short test summary info ============================
+FAILED tests/test_lane_isolation.py::test_candidate_has_no_access_to_stable_worker_capacity
+1 failed in 0.02s

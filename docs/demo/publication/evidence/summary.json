@@ -1,0 +1,1170 @@
+{
+  "api_down_rollback": {
+    "decision": "ROLLED_BACK",
+    "reason": "operator_requested",
+    "recovery_ms": 7.307339226827025,
+    "route": {
+      "candidate": null,
+      "epoch": 8,
+      "gates": {
+        "functional": {
+          "decision": "PASS",
+          "observations": [
+            {
+              "cpu_ms": 16.76,
+              "elapsed_ms": 16.95277402177453,
+              "expected": true,
+              "matched": true,
+              "pid": 4030103,
+              "queue_ms": 0.002037966623902321,
+              "status": "ok",
+              "text": "aaa"
+            },
+            {
+              "cpu_ms": 16.506,
+              "elapsed_ms": 16.691206954419613,
+              "expected": true,
+              "matched": true,
+              "pid": 4030104,
+              "queue_ms": 0.001087784767150879,
+              "status": "ok",
+              "text": "a"
+            },
+            {
+              "cpu_ms": 13.744,
+              "elapsed_ms": 13.89515190385282,
+              "expected": false,
+              "matched": false,
+              "pid": 4030105,
+              "queue_ms": 0.0025848858058452606,
+              "status": "ok",
+              "text": "hello"
+            },
+            {
+              "cpu_ms": 12.674999999999999,
+              "elapsed_ms": 12.862636940553784,
+              "expected": false,
+              "matched": false,
+              "pid": 4030106,
+              "queue_ms": 0.001600012183189392,
+              "status": "ok",
+              "text": "account"
+            },
+            {
+              "cpu_ms": 13.191999999999998,
+              "elapsed_ms": 13.365320162847638,
+              "expected": false,
+              "matched": false,
+              "pid": 4030107,
+              "queue_ms": 0.001234002411365509,
+              "status": "ok",
+              "text": "aaa!"
+            }
+          ],
+          "reason": "functional",
+          "version": "0df81988c849133045bf6b5496d84e72b6398c41dc94e7dfaea738eada0a2666"
+        },
+        "performance": {
+          "decision": "PASS",
+          "observations": [
+            {
+              "cpu_ms": 13.03,
+              "elapsed_ms": 13.288111193105578,
+              "matched": false,
+              "pid": 4030108,
+              "profile": "adversarial",
+              "queue_ms": 0.001827022060751915,
+              "status": "ok"
+            }
+          ],
+          "reason": "bounded_adversarial_profile",
+          "version": "0df81988c849133045bf6b5496d84e72b6398c41dc94e7dfaea738eada0a2666"
+        }
+      },
+      "minimum": 100,
+      "original": {
+        "name": "good",
+        "pattern": "\\Aaa*\\Z"
+      },
+      "percent": 0,
+      "stable": {
+        "name": "good",
+        "pattern": "\\Aaa*\\Z"
+      },
+      "stage": 0,
+      "started": 1794942829.7408805,
+      "status": "ROLLED_BACK"
+    }
+  },
+  "bad_canary": {
+    "counts": {
+      "5fcda41f30c437329e023b03690b4ed70f0e6097413cd92eab540c3a136b0b72": 1,
+      "731bbac58cf784e1b4db033662aae315febc11b0147d410af3b03cf0012aeaea": 1
+    },
+    "decision": "REJECT",
+    "epoch": 5,
+    "percent": 10,
+    "reason": "candidate_failure_or_absolute_budget",
+    "rollback": {
+      "decision": "ROLLED_BACK",
+      "reason": "candidate_failure_or_absolute_budget",
+      "recovery_ms": 5.666658049449325,
+      "route": {
+        "candidate": null,
+        "epoch": 6,
+        "gates": {
+          "functional": {
+            "decision": "PASS",
+            "observations": [
+              {
+                "cpu_ms": 13.675999999999998,
+                "elapsed_ms": 13.959758915007114,
+                "expected": true,
+                "matched": true,
+                "pid": 4030087,
+                "queue_ms": 0.0018689315766096115,
+                "status": "ok",
+                "text": "aaa"
+              },
+              {
+                "cpu_ms": 14.221000000000002,
+                "elapsed_ms": 14.558042166754603,
+                "expected": true,
+                "matched": true,
+                "pid": 4030088,
+                "queue_ms": 0.0016230624169111252,
+                "status": "ok",
+                "text": "a"
+              },
+              {
+                "cpu_ms": 14.078999999999999,
+                "elapsed_ms": 14.288739068433642,
+                "expected": false,
+                "matched": false,
+                "pid": 4030089,
+                "queue_ms": 0.0026619527488946915,
+                "status": "ok",
+                "text": "hello"
+              },
+              {
+                "cpu_ms": 15.786999999999999,
+                "elapsed_ms": 15.953884925693274,
+                "expected": false,
+                "matched": false,
+                "pid": 4030090,
+                "queue_ms": 0.001583946868777275,
+                "status": "ok",
+                "text": "account"
+              },
+              {
+                "cpu_ms": 15.088,
+                "elapsed_ms": 15.30699897557497,
+                "expected": false,
+                "matched": false,
+                "pid": 4030091,
+                "queue_ms": 0.0013979151844978333,
+                "status": "ok",
+                "text": "aaa!"
+              }
+            ],
+            "reason": "functional",
+            "version": "5fcda41f30c437329e023b03690b4ed70f0e6097413cd92eab540c3a136b0b72"
+          },
+          "performance": {
+            "decision": "PASS",
+            "observations": [
+              {
+                "cpu_ms": 13.337,
+                "elapsed_ms": 13.578886864706874,
+                "matched": false,
+                "pid": 4030092,
+                "profile": "small",
+                "queue_ms": 0.0018980354070663452,
+                "status": "ok"
+              }
+            ],
+            "reason": "bounded_adversarial_profile",
+            "version": "5fcda41f30c437329e023b03690b4ed70f0e6097413cd92eab540c3a136b0b72"
+          }
+        },
+        "minimum": 100,
+        "original": {
+          "name": "good",
+          "pattern": "\\Aaa*\\Z"
+        },
+        "percent": 0,
+        "stable": {
+          "name": "good",
+          "pattern": "\\Aaa*\\Z"
+        },
+        "stage": 0,
+        "started": 1794942829.412169,
+        "status": "ROLLED_BACK"
+      }
+    },
+    "time": 1794942829.5883617
+  },
+  "bad_http": {
+    "client_ms": 122.67850921489298,
+    "http_status": 503,
+    "response": {
+      "candidate": true,
+      "cohort": "routed",
+      "cpu_ms": 120.75899999999999,
+      "elapsed_ms": 121.4029781986028,
+      "epoch": 5,
+      "expected_block": false,
+      "matched": false,
+      "queue_ms": 0.002001877874135971,
+      "request_id": "bad-15",
+      "status": "timeout",
+      "time": 1794942829.5581737,
+      "version": "5fcda41f30c437329e023b03690b4ed70f0e6097413cd92eab540c3a136b0b72",
+      "worker_ms": 121.38107395730913
+    }
+  },
+  "baseline": {
+    "counts": {
+      "0df81988c849133045bf6b5496d84e72b6398c41dc94e7dfaea738eada0a2666": 20
+    },
+    "decision": "COMPLETE",
+    "elapsed_s": 0.3099357259925455,
+    "epoch": 0,
+    "minimum": 20,
+    "sent": 20
+  },
+  "calibration": "Serial fresh-interpreter requests; 100/version/stage for bounded shared-host demonstration. Default controller policy remains 1000; 10 is integration-test smoke only. Nearest-rank p95 only, no p99 or production statistical confidence.",
+  "candidate_requests": 301,
+  "cleanup": {
+    "api_pids": [
+      4026498,
+      4030130
+    ],
+    "api_reaped": true
+  },
+  "comparable_stable_adversarial": {
+    "client_ms": 14.381029875949025,
+    "http_status": 200,
+    "response": {
+      "candidate": false,
+      "cohort": "routed",
+      "cpu_ms": 13.064,
+      "elapsed_ms": 13.237819075584412,
+      "epoch": 5,
+      "expected_block": false,
+      "matched": false,
+      "queue_ms": 0.0016780104488134384,
+      "request_id": "stable-0",
+      "status": "ok",
+      "time": 1794942829.4355183,
+      "version": "731bbac58cf784e1b4db033662aae315febc11b0147d410af3b03cf0012aeaea",
+      "worker_ms": 13.218138134106994
+    }
+  },
+  "ended_utc": "2026-11-17T19:13:50Z",
+  "expensive_preflight": {
+    "gates": {
+      "functional": {
+        "decision": "PASS",
+        "observations": [
+          {
+            "cpu_ms": 12.891,
+            "elapsed_ms": 13.065542094409466,
+            "expected": true,
+            "matched": true,
+            "pid": 4026652,
+            "queue_ms": 0.002402113750576973,
+            "status": "ok",
+            "text": "aaa"
+          },
+          {
+            "cpu_ms": 13.347,
+            "elapsed_ms": 13.585826149210334,
+            "expected": true,
+            "matched": true,
+            "pid": 4026653,
+            "queue_ms": 0.0014870893210172653,
+            "status": "ok",
+            "text": "a"
+          },
+          {
+            "cpu_ms": 16.195999999999998,
+            "elapsed_ms": 16.409544041380286,
+            "expected": false,
+            "matched": false,
+            "pid": 4026654,
+            "queue_ms": 0.0024328473955392838,
+            "status": "ok",
+            "text": "hello"
+          },
+          {
+            "cpu_ms": 12.400999999999998,
+            "elapsed_ms": 12.676344020292163,
+            "expected": false,
+            "matched": false,
+            "pid": 4026659,
+            "queue_ms": 0.0021460000425577164,
+            "status": "ok",
+            "text": "account"
+          },
+          {
+            "cpu_ms": 13.332,
+            "elapsed_ms": 13.483827002346516,
+            "expected": false,
+            "matched": false,
+            "pid": 4026664,
+            "queue_ms": 0.0014039687812328339,
+            "status": "ok",
+            "text": "aaa!"
+          }
+        ],
+        "reason": "functional",
+        "version": "5fcda41f30c437329e023b03690b4ed70f0e6097413cd92eab540c3a136b0b72"
+      },
+      "performance": {
+        "decision": "REJECT",
+        "observations": [
+          {
+            "cpu_ms": 120.553,
+            "elapsed_ms": 120.7385768648237,
+            "matched": false,
+            "pid": 4026665,
+            "profile": "adversarial",
+            "queue_ms": 0.0014619436115026474,
+            "status": "timeout"
+          }
+        ],
+        "reason": "bounded_adversarial_profile",
+        "version": "5fcda41f30c437329e023b03690b4ed70f0e6097413cd92eab540c3a136b0b72"
+      }
+    },
+    "status": "REJECTED"
+  },
+  "false_positive": {
+    "gates": {
+      "functional": {
+        "decision": "REJECT",
+        "observations": [
+          {
+            "cpu_ms": 16.36,
+            "elapsed_ms": 16.524482984095812,
+            "expected": true,
+            "matched": true,
+            "pid": 4026636,
+            "queue_ms": 0.0019010622054338455,
+            "status": "ok",
+            "text": "aaa"
+          },
+          {
+            "cpu_ms": 21.095,
+            "elapsed_ms": 21.249701967462897,
+            "expected": true,
+            "matched": true,
+            "pid": 4026638,
+            "queue_ms": 0.0012780074030160904,
+            "status": "ok",
+            "text": "a"
+          },
+          {
+            "cpu_ms": 15.169,
+            "elapsed_ms": 15.3691410087049,
+            "expected": false,
+            "matched": false,
+            "pid": 4026641,
+            "queue_ms": 0.0026940833777189255,
+            "status": "ok",
+            "text": "hello"
+          },
+          {
+            "cpu_ms": 15.363,
+            "elapsed_ms": 15.601517865434289,
+            "expected": false,
+            "matched": true,
+            "pid": 4026646,
+            "queue_ms": 0.001560896635055542,
+            "status": "ok",
+            "text": "account"
+          },
+          {
+            "cpu_ms": 13.97,
+            "elapsed_ms": 14.274406945332885,
+            "expected": false,
+            "matched": true,
+            "pid": 4026649,
+            "queue_ms": 0.0028829090297222137,
+            "status": "ok",
+            "text": "aaa!"
+          }
+        ],
+        "reason": "functional",
+        "version": "0464c019fbffcf86bc8cebe99fd54f6edd1a1ff1fd5a0e7493b40ec6cafeb788"
+      },
+      "performance": null
+    },
+    "status": "REJECTED"
+  },
+  "final_route": {
+    "candidate": null,
+    "epoch": 10,
+    "gates": {
+      "functional": {
+        "decision": "PASS",
+        "observations": [
+          {
+            "cpu_ms": 15.394,
+            "elapsed_ms": 15.578367980197072,
+            "expected": true,
+            "matched": true,
+            "pid": 4030142,
+            "queue_ms": 0.0016400590538978577,
+            "status": "ok",
+            "text": "aaa"
+          },
+          {
+            "cpu_ms": 12.647,
+            "elapsed_ms": 12.814993970096111,
+            "expected": true,
+            "matched": true,
+            "pid": 4030143,
+            "queue_ms": 0.0010689254850149155,
+            "status": "ok",
+            "text": "a"
+          },
+          {
+            "cpu_ms": 13.6,
+            "elapsed_ms": 13.758288929238915,
+            "expected": false,
+            "matched": false,
+            "pid": 4030144,
+            "queue_ms": 0.002209097146987915,
+            "status": "ok",
+            "text": "hello"
+          },
+          {
+            "cpu_ms": 13.41,
+            "elapsed_ms": 13.568097027018666,
+            "expected": false,
+            "matched": false,
+            "pid": 4030145,
+            "queue_ms": 0.0012989621609449387,
+            "status": "ok",
+            "text": "account"
+          },
+          {
+            "cpu_ms": 13.718,
+            "elapsed_ms": 13.842985033988953,
+            "expected": false,
+            "matched": false,
+            "pid": 4030146,
+            "queue_ms": 0.0015879049897193909,
+            "status": "ok",
+            "text": "aaa!"
+          }
+        ],
+        "reason": "functional",
+        "version": "0df81988c849133045bf6b5496d84e72b6398c41dc94e7dfaea738eada0a2666"
+      },
+      "performance": {
+        "decision": "PASS",
+        "observations": [
+          {
+            "cpu_ms": 13.972,
+            "elapsed_ms": 14.126323163509369,
+            "matched": false,
+            "pid": 4030147,
+            "profile": "adversarial",
+            "queue_ms": 0.0011532101780176163,
+            "status": "ok"
+          }
+        ],
+        "reason": "bounded_adversarial_profile",
+        "version": "0df81988c849133045bf6b5496d84e72b6398c41dc94e7dfaea738eada0a2666"
+      }
+    },
+    "minimum": 100,
+    "original": {
+      "name": "good",
+      "pattern": "\\Aaa*\\Z"
+    },
+    "percent": 0,
+    "stable": {
+      "name": "good",
+      "pattern": "\\Aaa*\\Z"
+    },
+    "stage": 0,
+    "started": 1794942829.9715207,
+    "status": "ROLLED_BACK"
+  },
+  "git_commit": null,
+  "good_final": {
+    "candidate": {
+      "name": "good",
+      "pattern": "\\Aaa*\\Z"
+    },
+    "epoch": 4,
+    "gates": {
+      "functional": {
+        "decision": "PASS",
+        "observations": [
+          {
+            "cpu_ms": 15.51,
+            "elapsed_ms": 15.698981937021017,
+            "expected": true,
+            "matched": true,
+            "pid": 4026672,
+            "queue_ms": 0.0016200356185436249,
+            "status": "ok",
+            "text": "aaa"
+          },
+          {
+            "cpu_ms": 15.921000000000001,
+            "elapsed_ms": 16.104271868243814,
+            "expected": true,
+            "matched": true,
+            "pid": 4026673,
+            "queue_ms": 0.0011350493878126144,
+            "status": "ok",
+            "text": "a"
+          },
+          {
+            "cpu_ms": 12.780999999999999,
+            "elapsed_ms": 12.981934938579798,
+            "expected": false,
+            "matched": false,
+            "pid": 4026674,
+            "queue_ms": 0.002507120370864868,
+            "status": "ok",
+            "text": "hello"
+          },
+          {
+            "cpu_ms": 14.317,
+            "elapsed_ms": 14.55646799877286,
+            "expected": false,
+            "matched": false,
+            "pid": 4026677,
+            "queue_ms": 0.0016479752957820892,
+            "status": "ok",
+            "text": "account"
+          },
+          {
+            "cpu_ms": 13.297,
+            "elapsed_ms": 13.537265826016665,
+            "expected": false,
+            "matched": false,
+            "pid": 4026678,
+            "queue_ms": 0.0017888378351926804,
+            "status": "ok",
+            "text": "aaa!"
+          }
+        ],
+        "reason": "functional",
+        "version": "731bbac58cf784e1b4db033662aae315febc11b0147d410af3b03cf0012aeaea"
+      },
+      "performance": {
+        "decision": "PASS",
+        "observations": [
+          {
+            "cpu_ms": 13.18,
+            "elapsed_ms": 13.93101504072547,
+            "matched": false,
+            "pid": 4026679,
+            "profile": "adversarial",
+            "queue_ms": 0.001850072294473648,
+            "status": "ok"
+          }
+        ],
+        "reason": "bounded_adversarial_profile",
+        "version": "731bbac58cf784e1b4db033662aae315febc11b0147d410af3b03cf0012aeaea"
+      }
+    },
+    "minimum": 100,
+    "original": {
+      "name": "stable",
+      "pattern": "\\Aa+\\Z"
+    },
+    "percent": 100,
+    "stable": {
+      "name": "good",
+      "pattern": "\\Aaa*\\Z"
+    },
+    "stage": 2,
+    "started": 1794942826.2359114,
+    "status": "PROMOTED"
+  },
+  "insufficient_sample": {
+    "counts": {
+      "0df81988c849133045bf6b5496d84e72b6398c41dc94e7dfaea738eada0a2666": 1,
+      "731bbac58cf784e1b4db033662aae315febc11b0147d410af3b03cf0012aeaea": 0
+    },
+    "decision": "INCONCLUSIVE",
+    "epoch": 1,
+    "minimum": 100,
+    "percent": 10,
+    "reason": "insufficient_sample",
+    "time": 1794942807.336093
+  },
+  "missing_telemetry": {
+    "decision": "INCONCLUSIVE",
+    "epoch": 1,
+    "percent": 10,
+    "reason": "missing_telemetry",
+    "time": 1794942807.2926624
+  },
+  "observed_requests": 1510,
+  "operator_recovery": {
+    "decision": "ROLLED_BACK",
+    "reason": "operator_requested",
+    "recovery_ms": 5.700600100681186,
+    "route": {
+      "candidate": null,
+      "epoch": 10,
+      "gates": {
+        "functional": {
+          "decision": "PASS",
+          "observations": [
+            {
+              "cpu_ms": 15.394,
+              "elapsed_ms": 15.578367980197072,
+              "expected": true,
+              "matched": true,
+              "pid": 4030142,
+              "queue_ms": 0.0016400590538978577,
+              "status": "ok",
+              "text": "aaa"
+            },
+            {
+              "cpu_ms": 12.647,
+              "elapsed_ms": 12.814993970096111,
+              "expected": true,
+              "matched": true,
+              "pid": 4030143,
+              "queue_ms": 0.0010689254850149155,
+              "status": "ok",
+              "text": "a"
+            },
+            {
+              "cpu_ms": 13.6,
+              "elapsed_ms": 13.758288929238915,
+              "expected": false,
+              "matched": false,
+              "pid": 4030144,
+              "queue_ms": 0.002209097146987915,
+              "status": "ok",
+              "text": "hello"
+            },
+            {
+              "cpu_ms": 13.41,
+              "elapsed_ms": 13.568097027018666,
+              "expected": false,
+              "matched": false,
+              "pid": 4030145,
+              "queue_ms": 0.0012989621609449387,
+              "status": "ok",
+              "text": "account"
+            },
+            {
+              "cpu_ms": 13.718,
+              "elapsed_ms": 13.842985033988953,
+              "expected": false,
+              "matched": false,
+              "pid": 4030146,
+              "queue_ms": 0.0015879049897193909,
+              "status": "ok",
+              "text": "aaa!"
+            }
+          ],
+          "reason": "functional",
+          "version": "0df81988c849133045bf6b5496d84e72b6398c41dc94e7dfaea738eada0a2666"
+        },
+        "performance": {
+          "decision": "PASS",
+          "observations": [
+            {
+              "cpu_ms": 13.972,
+              "elapsed_ms": 14.126323163509369,
+              "matched": false,
+              "pid": 4030147,
+              "profile": "adversarial",
+              "queue_ms": 0.0011532101780176163,
+              "status": "ok"
+            }
+          ],
+          "reason": "bounded_adversarial_profile",
+          "version": "0df81988c849133045bf6b5496d84e72b6398c41dc94e7dfaea738eada0a2666"
+        }
+      },
+      "minimum": 100,
+      "original": {
+        "name": "good",
+        "pattern": "\\Aaa*\\Z"
+      },
+      "percent": 0,
+      "stable": {
+        "name": "good",
+        "pattern": "\\Aaa*\\Z"
+      },
+      "stage": 0,
+      "started": 1794942829.9715207,
+      "status": "ROLLED_BACK"
+    }
+  },
+  "platform": "Linux-6.1.0-53-amd64-x86_64-with-glibc2.36",
+  "post_rollback_http": {
+    "client_ms": 13.883484061807394,
+    "http_status": 200,
+    "response": {
+      "candidate": false,
+      "cohort": "routed",
+      "cpu_ms": 12.681,
+      "elapsed_ms": 12.861800845712423,
+      "epoch": 6,
+      "expected_block": false,
+      "matched": false,
+      "queue_ms": 0.0021208543330430984,
+      "request_id": "rollback-readback",
+      "status": "ok",
+      "time": 1794942829.6161196,
+      "version": "731bbac58cf784e1b4db033662aae315febc11b0147d410af3b03cf0012aeaea",
+      "worker_ms": 12.845191871747375
+    }
+  },
+  "promotion_replay": {
+    "decision": "NOOP",
+    "status": "PROMOTED"
+  },
+  "proposed_minimum": 1000,
+  "python": "3.11.2 (main, May 12 2026, 05:17:27) [GCC 12.2.0]",
+  "restarted_api_http": {
+    "client_ms": 15.438288915902376,
+    "http_status": 200,
+    "response": {
+      "candidate": false,
+      "cohort": "routed",
+      "cpu_ms": 14.058,
+      "elapsed_ms": 14.46459093131125,
+      "epoch": 8,
+      "expected_block": false,
+      "matched": false,
+      "queue_ms": 0.0018759164959192276,
+      "request_id": "api-restarted",
+      "status": "ok",
+      "time": 1794942829.8447285,
+      "version": "731bbac58cf784e1b4db033662aae315febc11b0147d410af3b03cf0012aeaea",
+      "worker_ms": 14.44285805337131
+    }
+  },
+  "rollback_failure": {
+    "decision": "ROLLBACK_FAILED",
+    "error": "control lock deadline",
+    "reason": "operator_requested"
+  },
+  "source_sha256": {
+    "src/saferollout/api.py": "16522c7a4dfd1926431230ca7787c1de1a221dc1746f1e10554c7f4c7c0b0cce",
+    "src/saferollout/controller.py": "6444aaf7a135875e3fe0a6b27b65e4f53e5a411cada152cd602dbbaa852887ea",
+    "src/saferollout/demo.py": "a2c7ec98eab3bd499b732c3383745f416f75b7178081aece5cceb6c1cc2b2bda",
+    "src/saferollout/loadgen.py": "0cb163fe195ec73c2371e67a2ae52b67e110b255f74c5d390726cdb3bc65037b",
+    "src/saferollout/metrics.py": "0a9e91f8782293f8c333f24788e67bf062b87c1603be5f07869fd349a3170637",
+    "src/saferollout/router.py": "0e998cd934b8b31ac0e14888d18458b40640be7d12b5f17221c9bfc186fe4247",
+    "src/saferollout/rules.py": "727939ec4c72340e508ed3ec0a03bc1f0b9e91ed2249559c8535a94388e8c0d1",
+    "src/saferollout/worker.py": "c853aede8e97e23cf4e2979af286a133cfa823c8c64537adaeaf83ef108f4d20",
+    "src/saferollout/worker_child.py": "b33daaedcc60881ae9bd246d40fec49619e70aa7bd98cf7b48dc0e1a22f9bc30"
+  },
+  "stage_minimum": 100,
+  "stages": [
+    {
+      "evaluation": {
+        "counts": {
+          "0df81988c849133045bf6b5496d84e72b6398c41dc94e7dfaea738eada0a2666": 973,
+          "731bbac58cf784e1b4db033662aae315febc11b0147d410af3b03cf0012aeaea": 100
+        },
+        "decision": "PASS",
+        "epoch": 1,
+        "error_rates": {
+          "0df81988c849133045bf6b5496d84e72b6398c41dc94e7dfaea738eada0a2666": 0.0,
+          "731bbac58cf784e1b4db033662aae315febc11b0147d410af3b03cf0012aeaea": 0.0
+        },
+        "minimum": 100,
+        "p95_ms": {
+          "0df81988c849133045bf6b5496d84e72b6398c41dc94e7dfaea738eada0a2666": 15.525025082752109,
+          "731bbac58cf784e1b4db033662aae315febc11b0147d410af3b03cf0012aeaea": 15.411686152219772
+        },
+        "percent": 10,
+        "reason": "relative_budget",
+        "route": {
+          "candidate": {
+            "name": "good",
+            "pattern": "\\Aaa*\\Z"
+          },
+          "epoch": 2,
+          "gates": {
+            "functional": {
+              "decision": "PASS",
+              "observations": [
+                {
+                  "cpu_ms": 15.51,
+                  "elapsed_ms": 15.698981937021017,
+                  "expected": true,
+                  "matched": true,
+                  "pid": 4026672,
+                  "queue_ms": 0.0016200356185436249,
+                  "status": "ok",
+                  "text": "aaa"
+                },
+                {
+                  "cpu_ms": 15.921000000000001,
+                  "elapsed_ms": 16.104271868243814,
+                  "expected": true,
+                  "matched": true,
+                  "pid": 4026673,
+                  "queue_ms": 0.0011350493878126144,
+                  "status": "ok",
+                  "text": "a"
+                },
+                {
+                  "cpu_ms": 12.780999999999999,
+                  "elapsed_ms": 12.981934938579798,
+                  "expected": false,
+                  "matched": false,
+                  "pid": 4026674,
+                  "queue_ms": 0.002507120370864868,
+                  "status": "ok",
+                  "text": "hello"
+                },
+                {
+                  "cpu_ms": 14.317,
+                  "elapsed_ms": 14.55646799877286,
+                  "expected": false,
+                  "matched": false,
+                  "pid": 4026677,
+                  "queue_ms": 0.0016479752957820892,
+                  "status": "ok",
+                  "text": "account"
+                },
+                {
+                  "cpu_ms": 13.297,
+                  "elapsed_ms": 13.537265826016665,
+                  "expected": false,
+                  "matched": false,
+                  "pid": 4026678,
+                  "queue_ms": 0.0017888378351926804,
+                  "status": "ok",
+                  "text": "aaa!"
+                }
+              ],
+              "reason": "functional",
+              "version": "731bbac58cf784e1b4db033662aae315febc11b0147d410af3b03cf0012aeaea"
+            },
+            "performance": {
+              "decision": "PASS",
+              "observations": [
+                {
+                  "cpu_ms": 13.18,
+                  "elapsed_ms": 13.93101504072547,
+                  "matched": false,
+                  "pid": 4026679,
+                  "profile": "adversarial",
+                  "queue_ms": 0.001850072294473648,
+                  "status": "ok"
+                }
+              ],
+              "reason": "bounded_adversarial_profile",
+              "version": "731bbac58cf784e1b4db033662aae315febc11b0147d410af3b03cf0012aeaea"
+            }
+          },
+          "minimum": 100,
+          "original": {
+            "name": "stable",
+            "pattern": "\\Aa+\\Z"
+          },
+          "percent": 50,
+          "stable": {
+            "name": "stable",
+            "pattern": "\\Aa+\\Z"
+          },
+          "stage": 1,
+          "started": 1794942823.0052383,
+          "status": "CANARY"
+        },
+        "time": 1794942823.005166
+      },
+      "load": {
+        "counts": {
+          "0df81988c849133045bf6b5496d84e72b6398c41dc94e7dfaea738eada0a2666": 972,
+          "731bbac58cf784e1b4db033662aae315febc11b0147d410af3b03cf0012aeaea": 100
+        },
+        "decision": "COMPLETE",
+        "elapsed_s": 15.595701224869117,
+        "epoch": 1,
+        "minimum": 100,
+        "sent": 1072
+      },
+      "percent": 10
+    },
+    {
+      "evaluation": {
+        "counts": {
+          "0df81988c849133045bf6b5496d84e72b6398c41dc94e7dfaea738eada0a2666": 113,
+          "731bbac58cf784e1b4db033662aae315febc11b0147d410af3b03cf0012aeaea": 100
+        },
+        "decision": "PASS",
+        "epoch": 2,
+        "error_rates": {
+          "0df81988c849133045bf6b5496d84e72b6398c41dc94e7dfaea738eada0a2666": 0.0,
+          "731bbac58cf784e1b4db033662aae315febc11b0147d410af3b03cf0012aeaea": 0.0
+        },
+        "minimum": 100,
+        "p95_ms": {
+          "0df81988c849133045bf6b5496d84e72b6398c41dc94e7dfaea738eada0a2666": 16.02560398168862,
+          "731bbac58cf784e1b4db033662aae315febc11b0147d410af3b03cf0012aeaea": 16.132602002471685
+        },
+        "percent": 50,
+        "reason": "relative_budget",
+        "route": {
+          "candidate": {
+            "name": "good",
+            "pattern": "\\Aaa*\\Z"
+          },
+          "epoch": 3,
+          "gates": {
+            "functional": {
+              "decision": "PASS",
+              "observations": [
+                {
+                  "cpu_ms": 15.51,
+                  "elapsed_ms": 15.698981937021017,
+                  "expected": true,
+                  "matched": true,
+                  "pid": 4026672,
+                  "queue_ms": 0.0016200356185436249,
+                  "status": "ok",
+                  "text": "aaa"
+                },
+                {
+                  "cpu_ms": 15.921000000000001,
+                  "elapsed_ms": 16.104271868243814,
+                  "expected": true,
+                  "matched": true,
+                  "pid": 4026673,
+                  "queue_ms": 0.0011350493878126144,
+                  "status": "ok",
+                  "text": "a"
+                },
+                {
+                  "cpu_ms": 12.780999999999999,
+                  "elapsed_ms": 12.981934938579798,
+                  "expected": false,
+                  "matched": false,
+                  "pid": 4026674,
+                  "queue_ms": 0.002507120370864868,
+                  "status": "ok",
+                  "text": "hello"
+                },
+                {
+                  "cpu_ms": 14.317,
+                  "elapsed_ms": 14.55646799877286,
+                  "expected": false,
+                  "matched": false,
+                  "pid": 4026677,
+                  "queue_ms": 0.0016479752957820892,
+                  "status": "ok",
+                  "text": "account"
+                },
+                {
+                  "cpu_ms": 13.297,
+                  "elapsed_ms": 13.537265826016665,
+                  "expected": false,
+                  "matched": false,
+                  "pid": 4026678,
+                  "queue_ms": 0.0017888378351926804,
+                  "status": "ok",
+                  "text": "aaa!"
+                }
+              ],
+              "reason": "functional",
+              "version": "731bbac58cf784e1b4db033662aae315febc11b0147d410af3b03cf0012aeaea"
+            },
+            "performance": {
+              "decision": "PASS",
+              "observations": [
+                {
+                  "cpu_ms": 13.18,
+                  "elapsed_ms": 13.93101504072547,
+                  "matched": false,
+                  "pid": 4026679,
+                  "profile": "adversarial",
+                  "queue_ms": 0.001850072294473648,
+                  "status": "ok"
+                }
+              ],
+              "reason": "bounded_adversarial_profile",
+              "version": "731bbac58cf784e1b4db033662aae315febc11b0147d410af3b03cf0012aeaea"
+            }
+          },
+          "minimum": 100,
+          "original": {
+            "name": "stable",
+            "pattern": "\\Aa+\\Z"
+          },
+          "percent": 100,
+          "stable": {
+            "name": "stable",
+            "pattern": "\\Aa+\\Z"
+          },
+          "stage": 2,
+          "started": 1794942826.2359114,
+          "status": "CANARY"
+        },
+        "time": 1794942826.2358346
+      },
+      "load": {
+        "counts": {
+          "0df81988c849133045bf6b5496d84e72b6398c41dc94e7dfaea738eada0a2666": 113,
+          "731bbac58cf784e1b4db033662aae315febc11b0147d410af3b03cf0012aeaea": 100
+        },
+        "decision": "COMPLETE",
+        "elapsed_s": 3.1562188579700887,
+        "epoch": 2,
+        "minimum": 100,
+        "sent": 213
+      },
+      "percent": 50
+    },
+    {
+      "evaluation": {
+        "counts": {
+          "0df81988c849133045bf6b5496d84e72b6398c41dc94e7dfaea738eada0a2666": 100,
+          "731bbac58cf784e1b4db033662aae315febc11b0147d410af3b03cf0012aeaea": 100
+        },
+        "decision": "PASS",
+        "epoch": 3,
+        "error_rates": {
+          "0df81988c849133045bf6b5496d84e72b6398c41dc94e7dfaea738eada0a2666": 0.0,
+          "731bbac58cf784e1b4db033662aae315febc11b0147d410af3b03cf0012aeaea": 0.0
+        },
+        "minimum": 100,
+        "p95_ms": {
+          "0df81988c849133045bf6b5496d84e72b6398c41dc94e7dfaea738eada0a2666": 15.321672894060612,
+          "731bbac58cf784e1b4db033662aae315febc11b0147d410af3b03cf0012aeaea": 15.33790398389101
+        },
+        "percent": 100,
+        "reason": "relative_budget",
+        "route": {
+          "candidate": {
+            "name": "good",
+            "pattern": "\\Aaa*\\Z"
+          },
+          "epoch": 4,
+          "gates": {
+            "functional": {
+              "decision": "PASS",
+              "observations": [
+                {
+                  "cpu_ms": 15.51,
+                  "elapsed_ms": 15.698981937021017,
+                  "expected": true,
+                  "matched": true,
+                  "pid": 4026672,
+                  "queue_ms": 0.0016200356185436249,
+                  "status": "ok",
+                  "text": "aaa"
+                },
+                {
+                  "cpu_ms": 15.921000000000001,
+                  "elapsed_ms": 16.104271868243814,
+                  "expected": true,
+                  "matched": true,
+                  "pid": 4026673,
+                  "queue_ms": 0.0011350493878126144,
+                  "status": "ok",
+                  "text": "a"
+                },
+                {
+                  "cpu_ms": 12.780999999999999,
+                  "elapsed_ms": 12.981934938579798,
+                  "expected": false,
+                  "matched": false,
+                  "pid": 4026674,
+                  "queue_ms": 0.002507120370864868,
+                  "status": "ok",
+                  "text": "hello"
+                },
+                {
+                  "cpu_ms": 14.317,
+                  "elapsed_ms": 14.55646799877286,
+                  "expected": false,
+                  "matched": false,
+                  "pid": 4026677,
+                  "queue_ms": 0.0016479752957820892,
+                  "status": "ok",
+                  "text": "account"
+                },
+                {
+                  "cpu_ms": 13.297,
+                  "elapsed_ms": 13.537265826016665,
+                  "expected": false,
+                  "matched": false,
+                  "pid": 4026678,
+                  "queue_ms": 0.0017888378351926804,
+                  "status": "ok",
+                  "text": "aaa!"
+                }
+              ],
+              "reason": "functional",
+              "version": "731bbac58cf784e1b4db033662aae315febc11b0147d410af3b03cf0012aeaea"
+            },
+            "performance": {
+              "decision": "PASS",
+              "observations": [
+                {
+                  "cpu_ms": 13.18,
+                  "elapsed_ms": 13.93101504072547,
+                  "matched": false,
+                  "pid": 4026679,
+                  "profile": "adversarial",
+                  "queue_ms": 0.001850072294473648,
+                  "status": "ok"
+                }
+              ],
+              "reason": "bounded_adversarial_profile",
+              "version": "731bbac58cf784e1b4db033662aae315febc11b0147d410af3b03cf0012aeaea"
+            }
+          },
+          "minimum": 100,
+          "original": {
+            "name": "stable",
+            "pattern": "\\Aa+\\Z"
+          },
+          "percent": 100,
+          "stable": {
+            "name": "good",
+            "pattern": "\\Aaa*\\Z"
+          },
+          "stage": 2,
+          "started": 1794942826.2359114,
+          "status": "PROMOTED"
+        },
+        "time": 1794942829.216466
+      },
+      "load": {
+        "counts": {
+          "0df81988c849133045bf6b5496d84e72b6398c41dc94e7dfaea738eada0a2666": 100,
+          "731bbac58cf784e1b4db033662aae315febc11b0147d410af3b03cf0012aeaea": 100
+        },
+        "decision": "COMPLETE",
+        "elapsed_s": 2.902138476027176,
+        "epoch": 3,
+        "minimum": 100,
+        "sent": 200
+      },
+      "percent": 100
+    }
+  ],
+  "started_utc": "2026-11-17T19:13:26Z",
+  "status_counts": {
+    "ok": 1509,
+    "timeout": 1
+  },
+  "synthetic_traffic": true,
+  "worker_cpu_ms_total": 20337.941000000024,
+  "worker_deadline_ms": 120
+}

@@ -1,0 +1,35 @@
+FF                                                                       [100%]
+=================================== FAILURES ===================================
+__________ test_control_characters_and_actual_queue_wait_are_measured __________
+
+    def test_control_characters_and_actual_queue_wait_are_measured():
+        w = Worker(deadline=.2, concurrency=1, queue=1)
+>       assert w.evaluate('a', '\x00' * 4096)['status'] == 'ok'
+E       AssertionError: assert 'worker_error' == 'ok'
+E         - ok
+E         + worker_error
+
+tests/test_deadlines.py:10: AssertionError
+________________ test_expired_stage_never_promotes_old_samples _________________
+
+tmp_path = PosixPath('/home/pontope/.hermes/cache/scratch/pytest-of-pontope/pytest-14/test_expired_stage_never_promo0')
+
+    def test_expired_stage_never_promotes_old_samples(tmp_path):
+        from saferollout.controller import Controller
+        store = Store(tmp_path / 'route.json')
+        store.initialize(RULES['stable'])
+        c = Controller(store, minimum=10)
+        route = c.begin(RULES['good'])
+        store.update(route['epoch'], started=time.time() - 121)
+        result = c.observe([])
+        assert result['decision'] == 'INCONCLUSIVE'
+>       assert result['reason'] == 'stage_deadline'
+E       AssertionError: assert 'missing_telemetry' == 'stage_deadline'
+E         - stage_deadline
+E         + missing_telemetry
+
+tests/test_deadlines.py:31: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_deadlines.py::test_control_characters_and_actual_queue_wait_are_measured
+FAILED tests/test_deadlines.py::test_expired_stage_never_promotes_old_samples
+2 failed in 0.12s

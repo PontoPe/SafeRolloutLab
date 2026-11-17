@@ -1,0 +1,8 @@
+[extend]
+useDefault = true
+
+# Exact generated source-hash line, NOT an API credential or broad path exemption.
+[[allowlists]]
+description = "Source provenance hash for the API module"
+regexTarget = "line"
+regexes = ['''^\s*"src/saferollout/api\.py": "[0-9a-f]{64}",?$''']

@@ -1,0 +1,29 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+_________ test_valid_json_nonobject_telemetry_cannot_crash_controller __________
+
+tmp_path = PosixPath('/home/pontope/.hermes/cache/scratch/pytest-of-pontope/pytest-23/test_valid_json_nonobject_tele0')
+
+    def test_valid_json_nonobject_telemetry_cannot_crash_controller(tmp_path):
+        from saferollout.controller import Controller
+        store = Store(tmp_path / 'route.json')
+        store.initialize(RULES['stable'])
+        c = Controller(store, minimum=10)
+        c.begin(RULES['good'])
+>       assert c.observe([None, ['not', 'a', 'row']])['decision'] == 'INCONCLUSIVE'
+
+tests/test_observation_schema.py:11: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/saferollout/controller.py:47: in observe
+    stage_rows = [r for r in observations if r.get('epoch') == route['epoch']]
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+.0 = <list_iterator object at 0x7f11a2b97c40>
+
+>   stage_rows = [r for r in observations if r.get('epoch') == route['epoch']]
+E   AttributeError: 'NoneType' object has no attribute 'get'
+
+src/saferollout/controller.py:47: AttributeError
+=========================== short test summary info ============================
+FAILED tests/test_observation_schema.py::test_valid_json_nonobject_telemetry_cannot_crash_controller
+1 failed in 0.10s

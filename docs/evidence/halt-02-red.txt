@@ -1,0 +1,44 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+_______ test_audit_failure_still_restores_and_requires_explicit_recovery _______
+
+tmp_path = PosixPath('/home/pontope/.hermes/cache/scratch/pytest-of-pontope/pytest-30/test_audit_failure_still_resto0')
+
+    def test_audit_failure_still_restores_and_requires_explicit_recovery(tmp_path):
+        from saferollout.controller import Controller
+        store = Store(tmp_path / 'route.json')
+        store.initialize(RULES['stable'])
+        c = Controller(store, minimum=10)
+        active = c.begin(RULES['good'])
+        active = store.update(active['epoch'], stage=2, percent=100)
+        bad = [{**r, 'epoch': active['epoch'], 'status': 'timeout'}
+               for r in rows(version(RULES['good']), 10)]
+        c.audit.path.mkdir()
+>       result = c.observe(bad)
+
+tests/test_controller.py:81: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/saferollout/controller.py:68: in observe
+    self.audit.append(result)
+src/saferollout/metrics.py:20: in append
+    with self.path.open('a') as f:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/home/pontope/.hermes/cache/scratch/pytest-of-pontope/pytest-30/test_audit_failure_still_resto0/route.json.decisions.jsonl')
+mode = 'a', buffering = -1, encoding = 'locale', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+E       IsADirectoryError: [Errno 21] Is a directory: '/home/pontope/.hermes/cache/scratch/pytest-of-pontope/pytest-30/test_audit_failure_still_resto0/route.json.decisions.jsonl'
+
+/usr/lib/python3.11/pathlib.py:1045: IsADirectoryError
+=========================== short test summary info ============================
+FAILED tests/test_controller.py::test_audit_failure_still_restores_and_requires_explicit_recovery
+1 failed in 0.13s

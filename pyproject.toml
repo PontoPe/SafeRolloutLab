@@ -1,0 +1,10 @@
+[project]
+name = "saferollout-lab"
+version = "0.1.0"
+requires-python = ">=3.11"
+dependencies = []
+[project.optional-dependencies]
+test = ["pytest==7.2.1"]
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]

@@ -1,0 +1,10 @@
+{
+  "source_hashes_match": true,
+  "source_files_checked": 9,
+  "actual_metric_rows": 1510,
+  "declared_metric_rows": 1510,
+  "own_api_pids_absent": {
+    "3153041": true,
+    "3156602": true
+  }
+}

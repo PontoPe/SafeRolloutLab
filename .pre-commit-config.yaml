@@ -1,0 +1,9 @@
+repos:
+  - repo: local
+    hooks:
+      - id: gitleaks
+        name: gitleaks staged secrets (fail closed)
+        entry: scripts/secret-scan.sh staged
+        language: system
+        pass_filenames: false
+        always_run: true

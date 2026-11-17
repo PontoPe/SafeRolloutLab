@@ -1,0 +1,20 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+________________ test_bounded_demo_uses_real_processes_and_http ________________
+
+tmp_path = PosixPath('/home/pontope/.hermes/cache/scratch/pytest-of-pontope/pytest-16/test_bounded_demo_uses_real_pr0')
+
+    def test_bounded_demo_uses_real_processes_and_http(tmp_path):
+        env = {**os.environ, 'PYTHONPATH': 'src'}
+        result = subprocess.run([sys.executable, '-m', 'saferollout.demo', '--output', str(tmp_path / 'run'),
+                                 '--minimum', '10'], env=env, capture_output=True, text=True, timeout=45)
+>       assert result.returncode == 0, result.stderr + result.stdout
+E       AssertionError: /usr/bin/python3: No module named saferollout.demo
+E         
+E       assert 1 == 0
+E        +  where 1 = CompletedProcess(args=['/usr/bin/python3', '-m', 'saferollout.demo', '--output', '/home/pontope/.hermes/cache/scratch/...l_pr0/run', '--minimum', '10'], returncode=1, stdout='', stderr='/usr/bin/python3: No module named saferollout.demo\n').returncode
+
+tests/test_demo.py:11: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_demo.py::test_bounded_demo_uses_real_processes_and_http - A...
+1 failed in 0.02s

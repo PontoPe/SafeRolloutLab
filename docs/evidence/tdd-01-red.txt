@@ -1,0 +1,12 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+________________ test_worker_matches_and_reaps_with_bounded_cpu ________________
+
+    def test_worker_matches_and_reaps_with_bounded_cpu():
+>       from saferollout.worker import Worker
+E       ModuleNotFoundError: No module named 'saferollout.worker'
+
+tests/test_worker.py:7: ModuleNotFoundError
+=========================== short test summary info ============================
+FAILED tests/test_worker.py::test_worker_matches_and_reaps_with_bounded_cpu
+1 failed in 0.01s

@@ -1,0 +1,13 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+___________________ test_worker_payload_cpu_and_queue_bounds ___________________
+
+    def test_worker_payload_cpu_and_queue_bounds():
+        from saferollout.worker import Worker
+>       w = Worker(deadline=0.15, concurrency=1, queue=0)
+E       TypeError: Worker.__init__() got an unexpected keyword argument 'concurrency'
+
+tests/test_bounds.py:7: TypeError
+=========================== short test summary info ============================
+FAILED tests/test_bounds.py::test_worker_payload_cpu_and_queue_bounds - TypeE...
+1 failed in 0.01s

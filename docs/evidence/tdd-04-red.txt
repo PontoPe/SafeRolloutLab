@@ -1,0 +1,14 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+_____________ test_route_persistence_determinism_and_compare_swap ______________
+
+tmp_path = PosixPath('/home/pontope/.hermes/cache/scratch/pytest-of-pontope/pytest-3/test_route_persistence_determi0')
+
+    def test_route_persistence_determinism_and_compare_swap(tmp_path):
+>       from saferollout.router import Store, Conflict, choose
+E       ModuleNotFoundError: No module named 'saferollout.router'
+
+tests/test_router.py:6: ModuleNotFoundError
+=========================== short test summary info ============================
+FAILED tests/test_router.py::test_route_persistence_determinism_and_compare_swap
+1 failed in 0.01s

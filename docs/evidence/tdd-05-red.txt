@@ -1,0 +1,12 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+___ test_metrics_gate_refuses_missing_small_or_duplicate_and_aborts_timeouts ___
+
+    def test_metrics_gate_refuses_missing_small_or_duplicate_and_aborts_timeouts():
+>       from saferollout.metrics import assess
+E       ModuleNotFoundError: No module named 'saferollout.metrics'
+
+tests/test_metrics.py:7: ModuleNotFoundError
+=========================== short test summary info ============================
+FAILED tests/test_metrics.py::test_metrics_gate_refuses_missing_small_or_duplicate_and_aborts_timeouts
+1 failed in 0.02s
