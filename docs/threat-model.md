@@ -30,4 +30,4 @@ Protect availability of the known-good inspection lane, correctness of block dec
 - fsync/readback support observed local recovery, not distributed transactions, immunity to storage loss, or host-failure independence. Decision journals are not cryptographically immutable.
 - Synthetic corpora and 100 candidate observations per stage are limited demonstrations, not security completeness, high-load capacity testing or production SLO evidence. Worker CPU includes startup; API elapsed time excludes network, which is separately captured in client logs.
 
-No credentials, production systems, shared containers, AWS or external traffic were touched. The repository remains uncommitted and unpublished.
+No credentials, production systems, shared containers, AWS or external traffic were used to build or run the lab.
