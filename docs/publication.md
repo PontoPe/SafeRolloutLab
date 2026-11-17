@@ -27,6 +27,6 @@ Follow the README virtual-environment steps, install gitleaks 8.30.1, run `./scr
 
 ## Pedro's first mission
 
-Before running anything, write a prediction: why does the expensive rule pass functional tests yet fail the default performance gate? Run the demo, locate the exact rule hash/epoch for the timeout, compare `bad_canary.rollback` to the post-rollback HTTP result, and explain why API-down rollback proves HTTP-path independence but not host/storage resilience. Continue with [learning missions](learning-missions.md).
+Before running anything, write a prediction: why does the expensive rule pass functional tests yet fail the default performance gate? Run the demo, locate the exact rule hash/epoch for the timeout, compare `bad_canary.rollback` to the post-rollback HTTP result, and explain why API-down rollback proves HTTP-path independence but not host/storage resilience. Continue with [learning mission](learning-mission.md).
 
 Cloudflare source: John Graham-Cumming, [Details of the outage on July 2, 2019](https://blog.cloudflare.com/details-of-the-cloudflare-outage-on-july-2-2019/). The question to its author remains a draft, not a sent message.

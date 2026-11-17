@@ -62,4 +62,4 @@ python3 -m pytest -q
 ./scripts/demo.sh .run/reproduce-01 100
 ```
 
-See the [runbook](runbook.md), [threat model](threat-model.md) and [learning missions](learning-missions.md). `native-mvp-01` predates malformed-observation hardening; `native-mvp-02` predates the rollback halt-latch fix. Run `native-mvp-03` is authoritative for the runtime hashes behind the table above. The separately recorded publication reexecution is indexed in [demo evidence](demo/README.md); do not merge samples across runs.
+See the [runbook](runbook.md), [threat model](threat-model.md) and [learning mission](learning-mission.md). `native-mvp-01` predates malformed-observation hardening; `native-mvp-02` predates the rollback halt-latch fix. Run `native-mvp-03` is authoritative for the runtime hashes behind the table above. The separately recorded publication reexecution is indexed in [demo evidence](demo/README.md); do not merge samples across runs.
